@@ -22,9 +22,11 @@ object RatingsCounter {
     // Convert each line to a string, split it out by tabs, and extract the third field.
     // (The file format is userID, movieID, rating, timestamp)
     val ratings = lines.map(x => x.toString().split("\t")(2))
+    println(ratings)
     
     // Count up how many times each value (rating) occurs
     val results = ratings.countByValue()
+    println(results)
     
     // Sort the resulting map of (rating, count) tuples
     val sortedResults = results.toSeq.sortBy(_._1)
